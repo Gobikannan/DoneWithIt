@@ -3,6 +3,7 @@ import { View, ImageBackground, StyleSheet, Image } from "react-native";
 
 import AppText from "../components/AppText";
 import AppButton from "../components/AppButton";
+import Card from "../components/Card";
 
 function WelcomeScreen(props) {
   return (
@@ -14,6 +15,13 @@ function WelcomeScreen(props) {
       <View style={styles.logoContainer}>
         <Image source={require("./../assets/logo.png")} style={styles.logo} />
         <AppText>Sell What You Don't need</AppText>
+      </View>
+      <View style={styles.cardContainer}>
+        <Card
+          title="Hello"
+          image={require("../assets/food.jpg")}
+          subTitle="test"
+        ></Card>
       </View>
       <View style={styles.buttonContainer}>
         <AppButton title="Login"></AppButton>
@@ -33,17 +41,9 @@ const styles = StyleSheet.create({
     padding: 20,
     width: "100%",
   },
-  loginButton: {
+  cardContainer: {
+    padding: 20,
     width: "100%",
-    height: 70,
-    backgroundColor: "#fc5c65",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  registerButton: {
-    width: "100%",
-    height: 70,
-    backgroundColor: "#4ecdc4",
   },
   logoContainer: {
     position: "absolute",
