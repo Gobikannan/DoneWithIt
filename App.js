@@ -7,7 +7,8 @@ import Screen from "./app/components/Screen";
 import AccountScreen from "./app/screens/AccountScreen";
 import ListingsScreen from "./app/screens/ListingsScreen";
 import InputFormScreen from "./app/screens/InputFormScreen";
+import LoginScreen from "./app/screens/LoginScreen";
 
 export default function App() {
-  return <InputFormScreen />;
+  return <MessagesScreen />;
 }

@@ -2,7 +2,7 @@ import React from "react";
 import { View, ImageBackground, StyleSheet, Image } from "react-native";
 
 import AppText from "../components/AppText";
-import AppButton from "../components/AppButton";
+import { AppButton } from "../components/forms";
 import Card from "../components/Card";
 
 function WelcomeScreen(props) {

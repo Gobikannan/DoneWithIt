@@ -19,8 +19,14 @@ function ListItem({
           {!image && IconComponent}
           {image && <Image source={image} style={styles.image} />}
           <View style={styles.detailsContainer}>
-            <AppText style={styles.title}>{title}</AppText>
-            {subTitle && <AppText style={styles.subTitle}>{subTitle}</AppText>}
+            <AppText style={styles.title} numberOfLines={1}>
+              {title}
+            </AppText>
+            {subTitle && (
+              <AppText style={styles.subTitle} numberOfLines={2}>
+                {subTitle}
+              </AppText>
+            )}
           </View>
         </View>
       </TouchableHighlight>
@@ -30,11 +36,13 @@ function ListItem({
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     flexDirection: "row",
     padding: 15,
     backgroundColor: colors.white,
   },
   detailsContainer: {
+    flex: 1,
     flexDirection: "column",
     marginLeft: 10,
     justifyContent: "center",
@@ -46,9 +54,10 @@ const styles = StyleSheet.create({
   },
   title: {
     color: colors.black,
-    fontWeight: "600",
+    fontWeight: "700",
   },
   subTitle: {
+    fontWeight: "400",
     color: colors.medium,
   },
 });

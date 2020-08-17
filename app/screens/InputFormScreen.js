@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import Screen from "../components/Screen";
 import { Text, StyleSheet } from "react-native";
-import AppTextInput from "../components/AppTextInput";
-import AppSwitch from "../components/AppSwitch";
+import { AppSwitch, AppTextInput } from "../components/forms";
 import AppPicker from "../components/AppPicker";
 
 const categories = [

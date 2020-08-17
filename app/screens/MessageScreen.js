@@ -9,7 +9,11 @@ import Icon from "../components/Icon";
 const initialMessages = [
   {
     id: 1,
-    title: "T1",
+    title:
+      "Sign in as @gobikannan in Expo client on Android or iOS. Your projects will automatically appear in the Projects tab.",
+    description:
+      "Sign in as @gobikannan in Expo client on Android or iOS. Your projects will automatically appear in the Projects tab.",
+    image: require("../assets/food.jpg"),
   },
   {
     id: 2,
@@ -28,34 +32,36 @@ function MessagesScreen(props) {
     setMessages(newMessages);
   };
   return (
-    <FlatList
-      data={messages}
-      keyExtractor={(message) => message.id.toString()}
-      renderItem={({ item }) => (
-        <ListItem
-          title={item.title}
-          subTitle={item.description}
-          image={item.image}
-          ImageComponent={<Icon name="email" size={70} />}
-          onPress={() => console.log("message selected", item)}
-          renderRightActions={() => (
-            <ListItemDeleteAction onPress={() => handleDelete(item)} />
-          )}
-        />
-      )}
-      ItemSeparatorComponent={() => <ListItemSeparator />}
-      refreshing={refreshing}
-      onRefresh={() => {
-        setMessages([
-          {
-            id: 2,
-            title: "T2",
-            description: "D2",
-            image: require("../assets/food.jpg"),
-          },
-        ]);
-      }}
-    />
+    <Screen>
+      <FlatList
+        data={messages}
+        keyExtractor={(message) => message.id.toString()}
+        renderItem={({ item }) => (
+          <ListItem
+            title={item.title}
+            subTitle={item.description}
+            image={item.image}
+            ImageComponent={<Icon name="email" size={70} />}
+            onPress={() => console.log("message selected", item)}
+            renderRightActions={() => (
+              <ListItemDeleteAction onPress={() => handleDelete(item)} />
+            )}
+          />
+        )}
+        ItemSeparatorComponent={() => <ListItemSeparator />}
+        refreshing={refreshing}
+        onRefresh={() => {
+          setMessages([
+            {
+              id: 2,
+              title: "T2",
+              description: "D2",
+              image: require("../assets/food.jpg"),
+            },
+          ]);
+        }}
+      />
+    </Screen>
   );
 }
 
