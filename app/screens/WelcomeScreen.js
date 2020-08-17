@@ -5,7 +5,7 @@ import AppText from "../components/AppText";
 import { AppButton } from "../components/forms";
 import Card from "../components/Card";
 
-function WelcomeScreen(props) {
+function WelcomeScreen({ navigation }) {
   return (
     <ImageBackground
       blurRadius={5}
@@ -24,8 +24,8 @@ function WelcomeScreen(props) {
         ></Card>
       </View>
       <View style={styles.buttonContainer}>
-        <AppButton title="Login"></AppButton>
-        <AppButton title="Register" color="secondary"></AppButton>
+        <AppButton title="Login" onPress={() => navigation.navigate("Login")}></AppButton>
+        <AppButton title="Register" color="secondary" onPress={() => navigation.navigate("Messages")}></AppButton>
       </View>
     </ImageBackground>
   );
